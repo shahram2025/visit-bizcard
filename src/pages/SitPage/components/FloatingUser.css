@@ -1,0 +1,194 @@
+/* Floating User - Core Styles */
+.floating-user {
+  /* Positioning */
+  position: absolute;
+  transform: translate3d(0, 0, 0);
+  will-change: transform;
+  contain: layout;
+  z-index: 1;
+  
+  /* Layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 84px;
+  padding: 12px 8px;
+  gap: 8px;
+  
+  /* Visual Design */
+  background: rgba(255, 255, 255, 0.98);
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(2px);
+  
+  /* Interaction */
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  transition: 
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+  
+  /* Performance Optimizations */
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* User Avatar Styles */
+.user-photo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  background: linear-gradient(135deg, #f5f7fa, #e4e8eb);
+  transition: transform 0.15s ease-out;
+}
+
+.default-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  font-weight: 600;
+  font-size: 22px;
+  border: 2px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* User Name */
+.user-name {
+  font-size: 12px;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+  padding: 0 4px;
+}
+
+/* Dragging State */
+.floating-user.dragging {
+  cursor: grabbing;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 1);
+  z-index: 10;
+  transition: none; /* Disable transitions during drag */
+}
+
+.floating-user.dragging .user-photo,
+.floating-user.dragging .default-avatar {
+  transform: scale(0.96);
+}
+
+/* Hover State */
+.floating-user:not(.dragging):hover {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Context Menu */
+.user-context-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border-radius: 12px;
+  padding: 6px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
+  z-index: 100;
+  min-width: 140px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  animation: menu-fade-in 0.15s ease-out forwards;
+}
+
+.user-context-menu::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: transparent transparent white transparent;
+}
+
+.user-context-menu button {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: none;
+  border: none;
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.user-context-menu button:hover {
+  background: #f8f9fa;
+}
+
+.user-context-menu button:first-child {
+  color: #e74c3c;
+}
+
+.user-context-menu button:first-child:hover {
+  background: #ffebee;
+}
+
+/* Animations */
+@keyframes menu-fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Entrance Animation */
+@keyframes float-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.floating-user {
+  animation: float-in 0.3s ease-out forwards;
+}
+
+/* Mobile Optimizations */
+@media (hover: none) {
+  .floating-user {
+    cursor: pointer;
+  }
+  
+  .floating-user:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Debugging Overrides (remove in production) */
+/* .floating-user {
+  outline: 1px solid rgba(255,0,0,0.1);
+} */

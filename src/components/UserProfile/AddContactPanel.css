@@ -1,0 +1,258 @@
+/* Overlay Styles */
+.add-contact-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.add-contact-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Slide-In Panel Styles */
+.add-contact-panel {
+  position: fixed;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  max-width: 400px;
+  height: 100vh;
+  padding: 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+  z-index: 1000;
+  transition: left 0.3s ease-in-out;
+}
+
+.add-contact-panel.visible {
+  left: 0;
+}
+
+/* Close Button */
+.close-panel-btn {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #64748b;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-panel-btn:hover {
+  color: #2563eb;
+}
+
+/* Back Button */
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: #2563eb;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  transition: color 0.2s ease;
+}
+
+.back-button:hover {
+  color: #1d4ed8;
+}
+
+.back-icon {
+  font-size: 1rem;
+  color: inherit;
+}
+
+/* Step Guide Styles */
+.step-guide {
+  margin-bottom: 1.5rem;
+}
+
+.step-guide h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1e293b;
+  margin-bottom: 1.5rem;
+}
+
+.step-guide .step {
+  font-size: 1rem;
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+
+.step-guide .step-number {
+  font-weight: 600;
+  color: #2563eb;
+}
+
+/* Additional Info Section */
+.additional-info-toggle {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 1rem 0;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.additional-info-toggle:hover {
+  background-color: #f1f5f9;
+}
+
+.chevron {
+  font-size: 0.9rem;
+  transition: transform 0.2s ease;
+}
+
+.chevron.open {
+  transform: rotate(180deg);
+}
+
+.additional-fields {
+  margin-top: 1rem;
+  display: grid;
+  gap: 1rem;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Business Cards Container */
+.business-cards-container {
+  display: grid;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+
+/* Location Section */
+.find-location-btn {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  background-color: #eff6ff;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.find-location-btn:hover {
+  background-color: #dbeafe;
+}
+
+/* Form Elements */
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 1px #2563eb;
+}
+
+/* Buttons */
+.ContinueButton,
+.SaveButton {
+  width: 100%;
+  padding: 0.8rem 1.5rem;
+  margin-top: 1rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.ContinueButton:hover,
+.SaveButton:hover {
+  background-color: #1d4ed8;
+}
+
+.ContinueButton:disabled,
+.SaveButton:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+}
+
+/* Textarea Styling */
+.FormTextarea textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+/* Premium Look Enhancements */
+.add-contact-panel {
+  background-color: #f9fafb;
+}
+
+.step-guide h2 {
+  color: #333;
+}
+
+.step-guide .step {
+  color: #666;
+}
+
+.additional-info-toggle {
+  background-color: #f7f7f7;
+}
+
+.find-location-btn {
+  background-color: #e6e6e6;
+  color: #333;
+}
+
+.find-location-btn:hover {
+  background-color: #d9d9d9;
+}
+
+.SaveButton {
+  background-color: #34c759;
+}
+
+.SaveButton:hover {
+  background-color: #2ecc71;
+}

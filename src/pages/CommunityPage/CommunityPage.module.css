@@ -1,0 +1,82 @@
+/* Variables - now scoped to module */
+:local {
+  --primary: #1d9bf0;
+  --bg: #ffffff;
+  --card-bg: #fff;
+  --text: #14171a;
+  --text-secondary: #536471;
+  --border: #e1e8ed;
+  --card-width: 350px;
+  --card-height: 200px;
+  --card-radius: 16px;
+  --transition-speed: 0.6s;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Base Layout */
+.communityPage {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: var(--bg);
+  font-family: 'Inter', sans-serif;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* Tab Navigation */
+.tabNavigation {
+  display: flex;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.tabButton {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.tabButton:hover {
+  color: var(--primary);
+}
+
+.tabButton.active {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.tabButton.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+/* Grid Containers */
+.cardGridContainer {
+  width: 100%;
+  margin: 2rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  :local {
+    --card-width: 300px;
+    --card-height: 170px;
+  }
+  
+  .communityPage {
+    padding: 1rem;
+  }
+}

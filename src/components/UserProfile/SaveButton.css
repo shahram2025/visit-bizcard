@@ -1,0 +1,16 @@
+.save-profile-btn {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: var(--primary);
+    border: none;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color var(--transition);
+  }
+  
+  .save-profile-btn:hover {
+    background-color: #1f4670;
+  }

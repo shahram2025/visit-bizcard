@@ -1,0 +1,42 @@
+.create-business-card-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #ffffff;
+  color: #2563eb;
+  border: 1px solid #2563eb;
+  position: relative;
+  z-index: 10; /* Ensure button stays above other elements */
+  pointer-events: auto;
+}
+
+.create-business-card-button:hover {
+  background-color: #f1f5f9;
+  transform: translateY(-2px);
+}
+
+.create-business-card-button:active {
+  transform: translateY(0);
+}
+
+.create-business-card-button i {
+  pointer-events: none; /* Prevent icon from blocking clicks */
+}
+
+/* Focus state for accessibility */
+.create-business-card-button:focus {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .create-business-card-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}

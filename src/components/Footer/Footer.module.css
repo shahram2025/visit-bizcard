@@ -1,0 +1,88 @@
+/* src/components/Footer/Footer.module.css */
+
+:root {
+  --x-primary: #1d9bf0;
+  --x-bg: #f5f8fa;
+  --x-card-bg: #fff;
+  --x-text: #14171a;
+  --x-text-secondary: #536471;
+  --x-border: #e1e8ed;
+  --x-font: 'Inter', sans-serif;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0.75rem 0;
+  background-color: var(--x-card-bg);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  /* Premium subtle shadow */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
+  /* Smooth transition for any changes */
+  transition: all 0.3s ease;
+}
+
+.footer-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: var(--x-text-secondary);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.footer-icon svg {
+  font-size: 1.8rem; /* Increased from 1.5rem */
+  margin-bottom: 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.footer-icon:hover {
+  color: var(--x-primary);
+  background: rgba(29, 155, 240, 0.05);
+}
+
+.footer-icon:hover svg {
+  transform: translateY(-2px);
+}
+
+.footer-icon.active {
+  color: var(--x-primary);
+}
+
+/* Active state indicator (add className="active" to current route) */
+.footer-icon.active::after {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--x-primary);
+  margin-top: 0.25rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .footer {
+    padding: 0.5rem 0;
+  }
+  
+  .footer-icon svg {
+    font-size: 1.6rem; /* Slightly smaller on very small devices */
+  }
+}
+
+/* Tablet and larger screens */
+@media (min-width: 768px) {
+  .footer-icon svg {
+    font-size: 2rem; /* Even larger on tablets/desktops */
+  }
+}

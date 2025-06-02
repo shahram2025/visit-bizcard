@@ -1,0 +1,117 @@
+/* ===== Base Styles ===== */
+.heroSection {
+  --primary-color: #2563eb;
+  --text-dark: #1e293b;
+  --text-muted: #475569;
+  --light-bg: #f8fafc;
+  --transition-speed: 300ms;
+  
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  padding: 3rem 1.25rem;
+  background: linear-gradient(to bottom, #ffffff 0%, #f1f5f9 100%);
+}
+
+.contentContainer {
+  max-width: 64rem;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* ===== Typography ===== */
+.headline {
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+  color: var(--text-dark);
+  margin-bottom: 1.25rem;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.subhead {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 40rem;
+  margin: 0 auto 2rem;
+}
+
+/* ===== Decorative Elements ===== */
+.decorativeLine {
+  width: 4rem;
+  height: 0.25rem;
+  background: var(--primary-color);
+  margin: 2rem auto;
+  border-radius: 0.125rem;
+  opacity: 0.8;
+}
+
+/* ===== Animations ===== */
+.animateEntry {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Responsive Breakpoints ===== */
+@media (min-width: 640px) {
+  .heroSection {
+    padding: 4rem 1.5rem;
+  }
+  
+  .headline {
+    font-size: 2.5rem;
+  }
+  
+  .subhead {
+    font-size: 1.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heroSection {
+    padding: 5rem 2rem;
+  }
+  
+  .headline {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .subhead {
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* ===== Dark Mode ===== */
+@media (prefers-color-scheme: dark) {
+  .heroSection {
+    background: linear-gradient(to bottom, #0f172a 0%, #1e293b 100%);
+  }
+  
+  .headline {
+    color: #f8fafc;
+    background-image: linear-gradient(90deg, #60a5fa, #38bdf8);
+  }
+  
+  .subhead {
+    color: #94a3b8;
+  }
+  
+  .decorativeLine {
+    background: linear-gradient(90deg, #60a5fa, #38bdf8);
+  }
+}

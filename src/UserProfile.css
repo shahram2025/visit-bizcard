@@ -1,0 +1,216 @@
+/* General Styles */
+.user-profile {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  h2 {
+    font-size: 20px;
+    color: #555;
+    margin-bottom: 15px;
+  }
+  
+  /* Save Button */
+  .save-button {
+    display: block;
+    margin: 0 auto 20px;
+    padding: 12px 24px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .save-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .save-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  .save-button.saved {
+    background-color: #28a745; /* Green color for success */
+    transform: scale(1.05); /* Slight scaling animation */
+  }
+  
+  /* Profile Image Section */
+  .profile-image-container {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-image-wrapper {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .profile-image-wrapper:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .profile-image-placeholder {
+    color: #888;
+    font-size: 14px;
+  }
+  
+  /* Form Section */
+  .profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .profile-form input,
+  .profile-form select,
+  .profile-form textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: white;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .profile-form input:focus,
+  .profile-form select:focus,
+  .profile-form textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+    outline: none;
+  }
+  
+  .profile-form textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+  
+  /* Address Section */
+  .address-section {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  
+  .map-button {
+    padding: 12px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .map-button:hover {
+    background-color: #218838;
+  }
+  
+  .map-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Map Section */
+  .map-container {
+    margin-top: 15px;
+  }
+  
+  #map {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    height: 300px;
+    width: 100%;
+  }
+  
+  /* Business Card Section */
+  .business-card-container {
+    margin-top: 20px;
+  }
+  
+  .business-card-wrapper {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .business-card {
+    width: 160px;
+    height: 100px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .business-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .business-card-preview {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .business-card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 12px;
+  }
+  
+  .business-card-placeholder {
+    color: #888;
+    font-size: 14px;
+  }
+  
+  .business-card-upload-label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }

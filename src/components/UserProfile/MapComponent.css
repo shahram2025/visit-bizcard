@@ -1,0 +1,29 @@
+.map-container {
+    margin-top: 1rem;
+    position: relative;
+  }
+  
+  #map {
+    height: 200px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+  }
+  
+  .close-map-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color var(--transition);
+  }
+  
+  .close-map-btn:hover {
+    background-color: #1f4670;
+  }

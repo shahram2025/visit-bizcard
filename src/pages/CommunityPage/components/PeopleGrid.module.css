@@ -1,0 +1,76 @@
+.peopleGrid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  padding: 0.5rem;
+}
+
+.peopleCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 1.5rem 1rem;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #e1e8ed;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.peopleCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  background-color: rgba(29, 155, 240, 0.05);
+}
+
+.peopleAvatarContainer {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1.25rem;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #f3f4f6;
+}
+
+.peopleAvatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.peopleCard:hover .peopleAvatar {
+  transform: scale(1.05);
+}
+
+.peopleName {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #14171a;
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
+.peopleProfession {
+  font-size: 0.875rem;
+  color: #536471;
+  text-align: center;
+  font-weight: 500;
+}
+
+@media (max-width: 767px) {
+  .peopleGrid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 1rem;
+  }
+  
+  .peopleAvatarContainer {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .peopleName {
+    font-size: 0.875rem;
+  }
+}

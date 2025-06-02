@@ -1,0 +1,80 @@
+/* Premium ShareButton.css with Heartbeat Pulse */
+
+.share-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 16px 32px;
+  min-width: 220px;
+  background: linear-gradient(135deg, #4361EE 0%, #3A0CA3 100%);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  font-size: 17px;
+  font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+  letter-spacing: 0.25px;
+  box-shadow: 0 6px 12px rgba(58, 12, 163, 0.25);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Heartbeat Pulse Animation */
+.heart-pulse {
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.05); }
+  35% { transform: scale(1); }
+  45% { transform: scale(1.05); }
+  55% { transform: scale(1); }
+}
+
+/* Hover Effects */
+.share-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(58, 12, 163, 0.3);
+  background: linear-gradient(135deg, #4361EE 0%, #480CA8 100%);
+}
+
+.share-button:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 8px rgba(58, 12, 163, 0.3);
+}
+
+/* Icon Styling */
+.share-button svg {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.share-button:hover svg {
+  transform: translateX(3px);
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .share-button {
+    padding: 14px 28px;
+    min-width: 200px;
+    font-size: 16px;
+    border-radius: 12px;
+  }
+  
+  .share-button svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Special State When No Card */
+.share-button:not(.heart-pulse) {
+  background: linear-gradient(135deg, #ff4757 0%, #cc2e3d 100%);
+}

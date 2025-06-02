@@ -1,0 +1,111 @@
+/* ===== CARD GRID LAYOUT ===== */
+.cardGrid {
+  display: grid;
+  gap: 1.5rem;
+  width: 100%;
+  padding: 1.5rem;
+  /* Fluid columns from 1-4 based on container width */
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  justify-content: center;
+}
+
+/* ===== BASE CARD STYLES ===== */
+.card {
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  background: white;
+  cursor: pointer;
+  width: 100%;
+  aspect-ratio: 7/4;
+  /* Preserve all existing card styles */
+}
+
+/* ===== CARD FACES ===== */
+.cardFace {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== ADD CARD PLACEHOLDER ===== */
+.addCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f9fa;
+  border: 2px dashed #dee2e6;
+  transition: all 0.2s ease;
+  width: 100%;
+  aspect-ratio: 7/4;
+  border-radius: var(--card-radius);
+}
+
+/* ===== RESPONSIVE ADJUSTMENTS ===== */
+/* Large desktops (4 columns) */
+@media (min-width: 1600px) {
+  .cardGrid {
+    grid-template-columns: repeat(4, minmax(300px, 1fr));
+  }
+}
+
+/* Medium desktops (3 columns) */
+@media (max-width: 1599px) and (min-width: 1200px) {
+  .cardGrid {
+    grid-template-columns: repeat(3, minmax(280px, 1fr));
+  }
+}
+
+/* Small desktops/tablets (2 columns) */
+@media (max-width: 1199px) and (min-width: 768px) {
+  .cardGrid {
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+/* Tablets/mobile landscape (1-2 columns) */
+@media (max-width: 767px) and (min-width: 480px) {
+  .cardGrid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+}
+
+/* Mobile portrait (1 column) */
+@media (max-width: 479px) {
+  .cardGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 1rem;
+  }
+}
+
+/* ===== HOVER EFFECTS ===== */
+.card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+}
+
+/* ===== DARK MODE SUPPORT ===== */
+@media (prefers-color-scheme: dark) {
+  .card {
+    background: #1e293b;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  }
+  .addCard {
+    background-color: #334155;
+    border-color: #475569;
+  }
+}
+
+/* All other existing styles remain unchanged below this line */
+.cardImageContainer { /* ... */ }
+.cardImage { /* ... */ }
+.emptyState { /* ... */ }
+/* etc. */

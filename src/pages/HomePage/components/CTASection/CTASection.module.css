@@ -1,0 +1,79 @@
+/* CTASection.module.css */
+.ctaSection {
+  width: 100%;
+  padding: 40px 20px; /* Added vertical spacing */
+  text-align: center;
+  background-color: transparent;
+}
+
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  margin-top: 20px;
+  flex-wrap: wrap; /* For mobile responsiveness */
+}
+
+.uploadButton,
+.createButton {
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  outline: none;
+}
+
+.uploadButton {
+  background-color: #2563eb;
+  color: white;
+}
+
+.createButton {
+  background-color: white;
+  color: #2563eb;
+  border: 1px solid #2563eb;
+}
+
+.uploadButton:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-2px);
+}
+
+.createButton:hover {
+  background-color: #f1f5f9;
+  transform: translateY(-2px);
+}
+
+.ctaOr {
+  color: #64748b;
+  font-weight: 500;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .ctaButtons {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .uploadButton,
+  .createButton {
+    padding: 10px 20px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+  
+  .ctaOr {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+  }
+}

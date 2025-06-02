@@ -1,0 +1,189 @@
+/* Main Container Styles */
+.thirdeye-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: calc(100vh - var(--header-height, 60px) - var(--footer-height, 60px));
+  background-color: #f8f9fa;
+  overflow: hidden;
+}
+
+/* Map Container Styles */
+.thirdeye-map {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* Control Button Styles */
+.thirdeye-control {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  background: white;
+  padding: 8px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* User Marker Styles */
+.user-position-marker {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+
+.pulse-effect {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: rgba(67, 97, 238, 0.6);
+  opacity: 0;
+  z-index: 1;
+  animation: pulse 2s infinite;
+  transform: translate(-5px, -5px);
+  pointer-events: none;
+}
+
+.user-position-icon {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* Nearby User Marker Styles */
+.nearby-user-marker {
+  transition: transform 0.2s ease;
+}
+
+.nearby-user-marker:hover {
+  transform: scale(1.1);
+  z-index: 1001;
+}
+
+/* Animation Keyframes */
+@keyframes pulse {
+  0% {
+    transform: translate(-5px, -5px) scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translate(-5px, -5px) scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* Leaflet Overrides */
+.leaflet-container {
+  background-color: #f8f9fa;
+}
+
+.leaflet-interactive {
+  stroke-width: 2;
+  stroke-opacity: 0.8;
+  transition: stroke-opacity 0.2s ease;
+}
+
+.leaflet-interactive:hover {
+  stroke-opacity: 1;
+}
+
+.leaflet-top {
+  z-index: 2;
+}
+
+.leaflet-bottom {
+  z-index: 2;
+}
+
+.leaflet-tile {
+  filter: none;
+  transition: opacity 0.3s ease;
+}
+
+.leaflet-tile-loaded {
+  opacity: 1;
+}
+
+.leaflet-popup {
+  z-index: 1000;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+}
+
+.leaflet-popup-tip {
+  width: 12px;
+  height: 12px;
+}
+
+/* Radius Circle Styles */
+.leaflet-radius-circle {
+  stroke-dasharray: 5, 5;
+  animation: dash 10s linear infinite;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 100;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .thirdeye-control {
+    top: 10px;
+    right: 10px;
+    padding: 6px;
+  }
+  
+  .user-position-marker {
+    width: 28px;
+    height: 28px;
+  }
+  
+  .pulse-effect {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .thirdeye-container {
+    background-color: #121212;
+  }
+  
+  .leaflet-container {
+    background-color: #121212;
+  }
+  
+  .thirdeye-control {
+    background: #2d2d2d;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  }
+  
+  .leaflet-tile {
+    filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7);
+  }
+}

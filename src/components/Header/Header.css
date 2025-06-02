@@ -1,0 +1,86 @@
+/* src/components/Header/Header.css - Updated to remove border */
+
+/* Based on X (Twitter) 2025 */
+
+/* Root variables for X-style theme */
+:root {
+  --x-primary: #1d9bf0; /* X blue */
+  --x-bg: #f5f8fa; /* Light gray background */
+  --x-card-bg: #fff; /* White card background */
+  --x-text: #14171a; /* Dark text */
+  --x-text-secondary: #536471; /* Secondary text */
+  --x-border: #e1e8ed; /* Border color */
+  --x-font: 'Inter', 'Segoe UI', Arial, sans-serif; /* System font stack */
+}
+
+/* Header (Now App Bar) */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  background: var(--x-card-bg); /* or x-bg for softer look */
+  /* border-bottom: 1px solid var(--x-border);  REMOVE this line to remove border */
+  /*box-shadow: 0 1.5px 6px rgba(0, 0, 0, 0.04); Remove shadow */
+  position: sticky; /* Sticks to the top */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10; /* Ensures it's on top of other content */
+  font-family: var(--x-font);
+}
+
+/* Profile Image Container */
+.profile-image-container {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  /* border: 1.6px solid var(--x-primary); /* X blue border */
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.04);
+  position: relative; /* Creates a new stacking context */
+  z-index: 1; /* Ensures image stays above */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: var(--x-primary);
+}
+
+.profile-image-container:hover {
+  transform: scale(1.08);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.08);
+}
+
+/* Profile Image */
+.profile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image fills container */
+  pointer-events: none; /* Prevents image blocking clicks */
+}
+
+/* Logo (Simple Text) */
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--x-text); /* Main dark text color */
+}
+
+/* For smaller mobile screens */
+@media (max-width: 480px) {
+  .header {
+    padding: 0.5rem 0.7rem;
+  }
+
+  .profile-image-container {
+    width: 32px;
+    height: 32px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+}

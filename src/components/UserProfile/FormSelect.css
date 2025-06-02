@@ -1,0 +1,114 @@
+/* Base Styles */
+.form-select-container {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.select-wrapper {
+  position: relative;
+}
+
+/* Dropdown Styles */
+.form-select-dropdown {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #333;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-select-dropdown:hover {
+  border-color: #aaa;
+}
+
+.form-select-dropdown:focus {
+  outline: none;
+  border-color: #4361ee;
+  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+}
+
+/* Custom Dropdown Arrow */
+.select-wrapper::after {
+  content: "▼";
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+  color: #666;
+  pointer-events: none;
+}
+
+/* Option Groups */
+.form-select-dropdown optgroup {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #666;
+  padding: 0.5rem 0;
+}
+
+/* Individual Options */
+.form-select-dropdown option {
+  padding: 0.5rem 1rem;
+  font-size: 0.9375rem;
+}
+
+/* Other Input Field */
+.other-input-container {
+  margin-top: 0.75rem;
+  animation: fadeIn 0.3s ease-out;
+}
+
+.other-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #333;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.other-input:focus {
+  outline: none;
+  border-color: #4361ee;
+  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+}
+
+.other-input::placeholder {
+  color: #999;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .form-select-dropdown,
+  .other-input {
+    padding: 0.65rem 0.9rem;
+    font-size: 0.875rem;
+  }
+  
+  .select-wrapper::after {
+    right: 0.8rem;
+  }
+}

@@ -1,0 +1,44 @@
+/* src/pages/ThirdeyePage/components/UserMarker/UserMarker.css */
+
+.user-marker-icon {
+  text-align: center;
+}
+
+.user-marker-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.user-marker-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  object-fit: cover;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease;
+}
+
+.user-marker-name {
+  font-size: 12px;
+  font-weight: 600;
+  background-color: white;
+  padding: 3px 8px;
+  border-radius: 12px;
+  margin-top: 4px;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effects */
+.user-marker-icon:hover .user-marker-avatar {
+  transform: scale(1.1);
+  border-color: #4361ee;
+}
+
+.user-marker-icon:hover .user-marker-name {
+  background-color: #4361ee;
+  color: white;
+}

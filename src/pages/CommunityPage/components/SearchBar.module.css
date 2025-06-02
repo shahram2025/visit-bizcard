@@ -1,0 +1,46 @@
+.searchBarContainer {
+  width: 33.33%;
+  position: relative;
+  margin: 1rem 0;
+}
+
+.searchBar {
+  width: 100%;
+  padding: 0.8rem 1rem 0.8rem 2.5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 20px; /* Increased border radius to match image */
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background-color: white;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-secondary);
+  pointer-events: none;
+}
+
+/* Rest of the CSS remains exactly the same */
+.searchBar::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+.searchBar:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(29, 155, 240, 0.2);
+}
+
+.searchBar:hover {
+  border-color: #cbd5e1;
+}

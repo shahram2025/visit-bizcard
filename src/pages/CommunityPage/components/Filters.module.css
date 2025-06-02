@@ -1,0 +1,66 @@
+/* ===== FILTER BUTTONS ===== */
+.filter-btn {
+  flex: none;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid #d1d5db; /* Darkened border color (from #e5e7eb) */
+  border-radius: 8px;
+  background: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  color: var(--text-secondary);
+  
+  /* Premium border effect */
+  box-shadow: 
+    0 1px 1px rgba(0, 0, 0, 0.03),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+}
+
+.filter-btn:hover {
+  border-color: #9ca3af; /* Darker gray on hover */
+  background: rgba(29, 155, 240, 0.05);
+  color: var(--primary);
+}
+
+.filter-btn.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  /* Enhanced active state */
+  box-shadow: 
+    0 2px 4px rgba(29, 155, 240, 0.2),
+    inset 0 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+/* ===== FILTERS CONTAINER ===== */
+.filters-container {
+  margin-bottom: 1rem;
+  overflow: hidden;
+}
+
+/* ===== FILTERS SCROLLABLE AREA ===== */
+.filters {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 0.5rem;
+  cursor: grab;
+}
+
+/* Hide scrollbar while maintaining functionality */
+.filters::-webkit-scrollbar {
+  display: none;
+}
+
+.filters {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ===== GRAB CURSOR STATES ===== */
+.filters.grabbing {
+  cursor: grabbing;
+}

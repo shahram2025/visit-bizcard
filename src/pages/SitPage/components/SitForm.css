@@ -1,0 +1,94 @@
+.sit-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    background-color: #ffffff; /* White background */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  .sit-form h2 {
+    font-size: 2rem;
+    color: #333333;
+    margin-bottom: 20px;
+    font-weight: 700; /* Bold heading */
+    text-align: center;
+  }
+  
+  .sit-form label {
+    display: block;
+    font-size: 1rem;
+    color: #666666;
+    margin-bottom: 8px;
+  }
+  
+  .sit-form input,
+  .sit-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .sit-form input:focus,
+  .sit-form textarea:focus {
+    border-color: #007bff; /* Highlight focus */
+    outline: none;
+  }
+  
+  .sit-form textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 120px;
+  }
+  
+  .sit-form button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #ffffff;
+    background-color: #007bff; /* Primary button color */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sit-form button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .sit-form {
+      padding: 30px 15px;
+    }
+  
+    .sit-form h2 {
+      font-size: 1.75rem; /* Smaller heading on mobile */
+    }
+  
+    .sit-form input,
+    .sit-form textarea {
+      font-size: 0.9rem; /* Smaller text on mobile */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .sit-form {
+      padding: 20px 10px;
+    }
+  
+    .sit-form h2 {
+      font-size: 1.5rem; /* Even smaller heading on small devices */
+    }
+  
+    .sit-form input,
+    .sit-form textarea {
+      font-size: 0.85rem; /* Even smaller text on small devices */
+    }
+  }

@@ -1,0 +1,61 @@
+.icon-btn {
+    background-color: #4361ee;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+  
+  .icon-btn:hover {
+    background-color: #3a56d4;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .icon-btn:active {
+    transform: translateY(0);
+  }
+  
+  .third-eye-toggle.active {
+    background-color: #7209b7;
+  }
+  
+  .eye-icon {
+    font-size: 1rem;
+    margin-right: 0.5rem;
+  }
+  
+  .toggle-label {
+    font-size: 0.875rem;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .icon-btn {
+      padding: 0.4rem 0.75rem;
+      font-size: 0.8rem;
+    }
+    
+    .toggle-label {
+      display: none;
+    }
+    
+    .eye-icon {
+      margin-right: 0;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .icon-btn {
+      padding: 0.5rem;
+      width: 36px;
+      height: 36px;
+      justify-content: center;
+    }
+  }

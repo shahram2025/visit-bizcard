@@ -1,0 +1,36 @@
+.como-section {
+  text-align: center;
+  margin: 2rem 0 1rem;
+}
+
+.como-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.como-subtitle {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.community-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.community-header h3 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.member-count {
+  font-size: 14px;
+  color: var(--primary);
+  background: rgba(42, 92, 141, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+}
